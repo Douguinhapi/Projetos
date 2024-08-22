@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div>
+      <h1>Calculadora</h1>
+    </div>
+    <div>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <p id="result"></p>
+    </div>
+    <div>
+        <input type="radio" name="operation" value="add"> +
+        <input type="radio" name="operation" value="subtract"> -
+        <input type="radio" name="operation" value="multiply"> *
+        <input type="radio" name="operation" value="divide"> /
+        <button onclick="calculate()">Calcular</button>
+    </div>
+
+    <script>
+        const baseUrl = "https://e8dc-2804-388-c2ed-40b6-56ec-923-16de-a82b.ngrok-free.app";
+        const endPoint = "calcular";
+        async function apiCalc(num1, num2, operation){
+            const response = await fetch(`${baseUrl}/${endPoint}?num1=${num1}&num2=${num2}&operation=${operation}`,
+            {method: "GET"}
+            )
+            return await response.text();
+        }
+
+        async function somar(num1, num2){
+            return await apiCalc(num1, num2, "add");
+        }
+
+        async function subtrair(num1, num2){
+            return await apiCalc(num1, num2, "subtract");
+        }
+
+        async function multiplicar(num1, num2){
+            return await apiCalc(num1, num2, "multiply");
+        }
+
+        async function dividir(num1, num2){
+            return await apiCalc(num1, num2, "divide");
+        }
+
+        async function calculate(){
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const operation = document.querySelector('input[name="operation"]:checked').value;
+        
+
+            switch (operation) {
+                case 'add':
+                    result = await somar(num1, num2)
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+                case 'divide':
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = "Operação inválida";
+            }
+
+            document.getElementById("result").innerText = "Resultado: " + result;
+        };        
+    </script>
+</body>
+</html>

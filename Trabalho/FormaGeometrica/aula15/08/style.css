@@ -1,0 +1,33 @@
+.pai{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calculadora{
+    height: 350px;
+    width: 300px;
+    background-color: blue;
+}
+.interface{
+    display: block;
+}
+#tela{
+    height: 50px;
+    width: 250px;
+    background-color: aquamarine;
+    border: 2px solid black;
+    margin-top: 20px;
+    margin-left:23px;
+}
+.botoes{
+    margin-left: 23px;
+    margin-top: 20px;
+
+}
+button{
+    height: 60px;
+    width: 60px;
+    font-size: medium;
+    background-color: white;
+    color: black;
+}

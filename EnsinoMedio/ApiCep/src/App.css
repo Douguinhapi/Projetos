@@ -1,0 +1,29 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: rgb(219, 219, 219);
+}
+.content{
+  text-align: center;
+  margin: center;
+}
+.endereco{
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  /* margin: 160px; */
+}
+#botao{
+  background-color: rgb(86, 110, 219);
+  color: white;
+  width: 80px;
+  height: 30px;
+}
+#input{
+  margin: 120px;
+  justify-content: first baseline;
+}
