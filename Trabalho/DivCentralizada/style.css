@@ -1,0 +1,28 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.bola{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: rgb(110, 110, 107);
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    /* vw por conta do width ai ocupa 100% da tela o vh 100 pra sempre ter 100 do tela */
+}
+.menu_list{
+    background-color: rgb(110, 110, 107);
+}
+.menu_item{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

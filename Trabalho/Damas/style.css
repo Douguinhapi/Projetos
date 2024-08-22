@@ -1,0 +1,15 @@
+button{
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    vertical-align: top;
+}
+body{
+    background-color: yellow;
+}
+#casa01{
+    background-color: black;
+}
+#casa03{
+    background-color: black;
+}

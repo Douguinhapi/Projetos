@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h3>Site da NASA</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/640px-NASA_logo.svg.png" alt="Imagem da nasa">
+    </header>
+
+    <main>
+        <!-- Seção principal do conteúdo -->
+        <h1>Fotos do Rover Curiosity</h1>
+        <button id="next-button">Próxima Imagem</button>
+        <div id="fotos-container"></div>
+    </main>
+
+    <script>
+        let currentPage = 1;
+        // Variável para controlar a página atual das fotos
+
+        async function marsFotosV1(page){
+            // Define a função marsFotosV1 que recebe um número de página como parâmetro
+            const baseUrlV1 = "https://api.nasa.gov/mars-photos/api/v1";
+            const endPoint = "rovers/curiosity/photos";
+            const params = `?api_key=DEMO_KEY&sol=1000&page=${page}`;
+            const url = `${baseUrlV1}/${endPoint}${params}`;
+
+            try{
+                const response = await fetch(url);
+                // Faz a requisição para a API
+                const data = await response.json();
+                // Converte a resposta para JSON
+                displayPhotos(data.photos);
+                // Chama a função para exibir as fotos
+            } 
+            catch(error){
+                console.error("Erro ao buscar fotos:", error);
+                // Exibe no console se houver erro na requisição
+            }
+        }
+
+        function displayPhotos(photos) {
+            // Função para exibir as fotos na página
+            const container = document.getElementById('fotos-container');
+            // Seleciona o container de fotos pelo ID
+            container.innerHTML = ""; // Limpa o container
+
+            photos.forEach(photo => {
+                // Para cada foto recebida da API
+                const imgElement = document.createElement('img');
+                // Cria um elemento de imagem
+                imgElement.src = photo.img_src;
+                // Define a URL da imagem
+                imgElement.alt = `Foto tirada pela câmera ${photo.camera.full_name} no dia ${photo.earth_date}`;
+                // Define o texto alternativo da imagem
+                imgElement.style.width = "200px"; // Ajuste o tamanho conforme necessário
+                imgElement.style.margin = "10px"; // Adiciona margem entre as imagens
+
+                container.appendChild(imgElement);
+                // Adiciona a imagem ao container
+            });
+        }
+
+        // Chama a função para buscar e exibir as fotos quando a página é carregada
+        window.onload = () => {
+            marsFotosV1(currentPage);
+        };
+
+        document.getElementById('next-button').addEventListener('click', () => {
+            // Adiciona um event listener ao botão para ir para a próxima imagem
+            currentPage++;
+            // Incrementa a variável da página atual
+            marsFotosV1(currentPage);
+            // Chama a função para buscar e exibir as fotos da próxima página
+        });
+    </script>
+</body>
+</html>

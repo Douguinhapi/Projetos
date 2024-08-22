@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Armazenando Frases</title>
+</head>
+<body>
+
+<h2>Digite uma frase:</h2>
+<input type="text" id="fraseInput">
+<button onclick="adicionarFrase()">Adicionar Frase</button>
+
+<h2>Frases Armazenadas:</h2>
+<ul id="frasesLista"></ul>
+
+<script>
+    // Array para armazenar as frases
+    var frases = [];
+
+    // Função para adicionar uma frase ao array e exibi-la na lista
+    function adicionarFrase() {
+        var input = document.getElementById("fraseInput");
+        var frase = input.value;
+        
+        if (frase.trim() !== "") { // Verifica se a frase não está vazia
+            frases.push(frase); // Adiciona a frase ao array
+            input.value = ""; // Limpa o campo de entrada
+            
+            // Exibe as frases na lista
+            var lista = document.getElementById("frasesLista");
+            var itemLista = document.createElement("li");
+            itemLista.textContent = frase;
+            lista.appendChild(itemLista);
+        } else {
+            alert("Por favor, digite uma frase válida.");
+        }
+    }
+</script>
+
+</body>
+</html>

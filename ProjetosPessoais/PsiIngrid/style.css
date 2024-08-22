@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background-color: #F6DEED;
+}
+.Topo{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: space-evenly;
+}
+.FotoPsi{
+    width: 550px;
+    height: 550px;
+}
+.Nomes{
+    display: flex;
+    margin-left: 240px;
+    align-items: end;
+    flex-direction: column;
+    font-family: Georgia, 'Times New Roman', Times, serif, Geneva, Tahoma, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Tahoma, Geneva, Verdana, sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.Nome1{
+    color: #ff21ac;
+    font-size: 46px;
+}
+.Nome2{
+    color: #ff21ac;
+    font-size: 62px;
+}
+.Nome3{
+    font-size: 57px;
+}
+.FotoClinica{
+    border-radius: 20px;
+    width: 300px;
+    height: 500px;
+}
+.Meio{
+    display: flex;
+    justify-content: space-around;
+}
+.FotoClinica{
+    margin-left: 170px;
+    margin-right: 62px;
+}
+.Sobre{
+    padding: 20px; /* Da um espaçamento interno */
+    margin-right: 220px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.TituloSobre{
+    font-size: 50px;
+}
+.Meio2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: Georgia, 'Times New Roman', Times, serif, Geneva, Tahoma, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Tahoma, Geneva, Verdana, sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.PMeio{
+    font-size: 45px;
+}
+.ContainerFrases{
+    display: flex;
+    margin-left: 62px;
+    margin-right: 62px;
+    grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas de tamanho igual */
+    grid-template-rows: repeat(2, auto); /* Cria 2 linhas com altura automática */
+    gap: 10px; /* Espaçamento entre os itens */
+    margin-top: 29px;
+} 
+.DivFrases{
+    text-align: center; /* Centraliza o conteúdo dentro de cada div */
+    padding: 50px;
+    margin-left: 62px;
+    margin-right: 82px;
+}
+.DivFrases p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+.PGrande{
+    font-family: sans-serif;
+    font-size: 37px;
+}
+.DivFrases img{
+    width: 8.8%;
+    object-fit: contain;
+    mix-blend-mode: color-burn;
+    filter: drop-shadow(1px 1px 20px #ff21ac);
+}
+.DivBotaoWhatsapp{
+    display: flex;
+    justify-content: center;
+}
+.BotaoWhatsapp{
+    width: 200px;
+    height: 63px;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 19px;
+    background-color: #ff21ac;
+    color: #fff;
+}
+.Localizacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    height: 120px;
+    margin-left: 500px;
+}
+.BotaoInsta{
+    width: 140px;
+    height: 20px;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    background-color: #ff21ac;
+    color: #fff;
+}
+footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

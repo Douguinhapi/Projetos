@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background-color: #161616;
+}
+.MenuLateral{
+    width: 60px;
+    height: 100vh;
+    background-color: #161616;
+    padding: 40px 0 40px 1%; /* primeiro: distancia parte de cima segundo: direita terceiro: baixo quarto: parte esquerda */
+    box-shadow: 3px 0 0 #ff0077;
+
+    overflow: hidden; /* para nao ficar com as letras a mostra quando o mouse não estiver encostando */
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .3s;
+}
+.MenuLateral:hover{
+    width: 250px;
+}
+.BotaoExpandir{
+    width: 100%;
+    padding-left: 10px;
+
+}
+.ImgBotaoExpandir{
+    color: #000000;
+    width: 24px;
+    cursor: pointer; /* Só pra dizer que ele é clicavel */
+}
+ul{
+    height: 100%;
+    list-style-type: none; /* Ele tira a bolinha que fica do link */
+}
+.ItemMenu a{
+    display: flex;
+    margin-bottom: 25px;
+    color: #fff;
+    text-decoration: none;
+    width: 20px;
+    padding: 20px 4%;
+    line-height: 40px; /* para alinhar os icones com os paragrafos */
+}
+.ItemMenu img{
+    width: 20px;
+    height: 20px;
+}
+.TextoMenu{
+    margin-left: 40px;
+}
+ul img{
+    font-size: 15px;
+}
+li:hover{
+    background-color: #ff0077;
+}
+li{
+    transition: .3s;
+}
+.BotaoExpandir img{
+    background-color: #ff0077;
+}
+header p{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 59px;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
