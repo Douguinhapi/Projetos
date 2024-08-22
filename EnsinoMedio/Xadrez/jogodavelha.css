@@ -1,0 +1,32 @@
+.btJogo0, .btJogo1 {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    font-size: 80px;
+    line-height: 100px;
+    padding-top: 0;
+    margin-top: 0;
+    border-left: 0;
+    border-top: 0;
+    vertical-align: top;
+}
+
+.btJogo2 {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    font-size: 80px;
+    line-height: 100px;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+    vertical-align: top;
+
+}
+#bt02, #bt12, #bt22{
+    border-right: 0;
+}
+
+button:disabled{
+    border-color: black;
+}
