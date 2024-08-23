@@ -3,8 +3,8 @@
     padding: 0;
 }
 body{
-    font-family: fantasy;
-    letter-spacing: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -38,5 +38,5 @@ button:hover{
 }
 p{
     font-size: 18px;
-    background-color: #000000;
+    background-color: #0fc2c0;
 }
