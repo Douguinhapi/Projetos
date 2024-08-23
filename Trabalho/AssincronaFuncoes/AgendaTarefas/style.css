@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: fantasy;
+    letter-spacing: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0fc2c0;
+}
+h1{
+    color: rgb(2, 2, 2);
+}
+#conteinerTarefa{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+input, button{
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+}
+button{
+    cursor: pointer;
+    background-color: #074645;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: #27ce2d;
+    color: #000000;
+}
+p{
+    font-size: 18px;
+    background-color: #000000;
+}
