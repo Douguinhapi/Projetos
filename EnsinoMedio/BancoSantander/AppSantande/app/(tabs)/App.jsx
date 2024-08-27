@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Image } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Image, Modal } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function App() {
   const [balance, setBalance] = useState(7320.92);
   const [amount, setAmount] = useState('');
+  const [modalActive, setModalActive] = useState(false)
+
+
 
   const handleDeposit = () => {
     const value = parseFloat(amount);
@@ -11,6 +15,7 @@ export default function App() {
       setBalance(balance + value + value * 0.01);
       setAmount(''); // Limpa o campo após a operação
     }
+    setModalActive(false)
   };
 
   const handleWithdraw = () => {
@@ -19,7 +24,9 @@ export default function App() {
       setBalance(balance - value - (balance - value) * 0.025);
       setAmount(''); // Limpa o campo após a operação
     }
+    setModalActive(false)
   };
+
 
   return (
     <View style={styles.container}>
@@ -37,10 +44,43 @@ export default function App() {
         value={amount}
         onChangeText={setAmount}
       />
-      <View style={styles.buttonContainer}>
-        <Button title="Depositar" onPress={handleDeposit} color="red" />
-        <Button title="Sacar" onPress={handleWithdraw} color="red" />
-      </View>
+      <Modal
+        animationType='fade'
+        transparent={true}
+        visible={modalActive}
+        onRequestClose={() => (setModalActive(false))}
+      >
+        <View style={styles.outerView}>
+          <View style={styles.modalView}>
+            <Text style={{alignItems: 'center', justifyContent: 'center'}}>Tem certeza?</Text>
+            <Text onPress={handleDeposit} style={{backgroundColor: 'red', color: 'white', fontSize: 15}}>Confirmar</Text>
+            <Text style={{backgroundColor: 'red', color: 'white', fontSize: 15}}>Negar</Text>
+            {/* <Pressable onPress={() => setModalActive(false)}>
+              <Text style={{color: 'red'}}>Fechar modal</Text> 
+            </Pressable> */}
+          </View>
+        </View>
+      </Modal>
+      <TouchableOpacity onPress={() => setModalActive(true)} style={{backgroundColor: 'red', padding: 16, borderRadius: 8}}>
+        <Text style={{color: 'white', fontSize: 16}}>Depositar</Text>
+      </TouchableOpacity>
+      <Modal
+        animationType='fade'
+        transparent={true}
+        visible={modalActive}
+        onRequestClose={() => (setModalActive(false))}
+      >
+        <View style={styles.outerView}>
+          <View style={styles.modalView}>
+            <Text style={{alignItems: 'center', justifyContent: 'center'}}>Tem certeza?</Text>
+            <Text onPress={handleWithdraw} style={{backgroundColor: 'red', color: 'white', fontSize: 15}}>Confirmar</Text>
+            <Text style={{backgroundColor: 'red', color: 'white', fontSize: 15}}>Negar</Text>
+          </View>
+        </View>
+      </Modal>
+      <TouchableOpacity onPress={() => setModalActive(true)} style={{backgroundColor: 'red', padding: 16, borderRadius: 8}}>
+        <Text style={{color: 'white', fontSize: 16}}>Sacar</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -76,4 +116,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  outerView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.2)'
+  },
+  modalView: {
+    backgroundColor: 'white',
+    borderRadius: 30,
+    padding: 35,
+    width: 200,
+    alignItems: 'center'
+  }
 });
