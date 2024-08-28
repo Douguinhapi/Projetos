@@ -70,5 +70,22 @@ header p{
     justify-content: center;
     font-size: 59px;
     color: #fff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.Nome1{
+    color: #fff;
+}
+.Nome2{
+    color: #fff;
+}
+.Nome3{
+    color: #fff;
+}
+.frase{
+    color: #fff;
+}
+.frasesinicio{
+    display: flex;
+    margin-left: 345px;
+    flex-direction: column;
 }
