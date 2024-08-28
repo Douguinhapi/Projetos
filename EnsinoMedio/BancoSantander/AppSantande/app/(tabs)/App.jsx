@@ -8,7 +8,6 @@ export default function App() {
   const [modalActive, setModalActive] = useState(false)
 
 
-
   const handleDeposit = () => {
     const value = parseFloat(amount);
     if (!isNaN(value) && value > 0) {
