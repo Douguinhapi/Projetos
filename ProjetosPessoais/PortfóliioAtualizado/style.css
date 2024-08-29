@@ -4,27 +4,27 @@
 }
 body{
     height: 100vh;
-    background-color: #161616;
+    background-color: #76b0cd;
 }
-.MenuLateral{
-    width: 60px;
+.MenuLateral {
+    width: 42px;
     height: 100vh;
-    background-color: #161616;
-    padding: 40px 0 40px 1%; /* primeiro: distancia parte de cima segundo: direita terceiro: baixo quarto: parte esquerda */
-    box-shadow: 3px 0 0 #ff0077;
-
-    overflow: hidden; /* para nao ficar com as letras a mostra quando o mouse não estiver encostando */
+    background-color: #76b0cd;
+    padding: 40px 0 40px 1%; /* primeiro: distancia parte de cima, segundo: direita, terceiro: baixo, quarto: esquerda */
+    box-shadow: 3px 0 0 #4882bb;
+    overflow: hidden; /* para não mostrar as letras quando o menu estiver contraído */
     position: fixed;
     top: 0;
     left: 0;
-    transition: .3s;
+    transition: width .3s;
 }
-.MenuLateral:hover{
-    width: 250px;
+/* Remova o hover e use uma classe para controlar a expansão */
+.MenuLateral.open {
+    width: 180px;
 }
 .BotaoExpandir{
     width: 100%;
-    padding-left: 10px;
+    padding-left: 1px;
 
 }
 .ImgBotaoExpandir{
@@ -42,12 +42,12 @@ ul{
     color: #fff;
     text-decoration: none;
     width: 20px;
-    padding: 20px 4%;
+    padding: 17px 8%;
     line-height: 40px; /* para alinhar os icones com os paragrafos */
 }
 .ItemMenu img{
-    width: 20px;
-    height: 20px;
+    width: 21px;
+    height: 21px;
 }
 .TextoMenu{
     margin-left: 40px;
@@ -56,13 +56,13 @@ ul img{
     font-size: 15px;
 }
 li:hover{
-    background-color: #ff0077;
+    background-color: #073FC9;
 }
 li{
     transition: .3s;
 }
 .BotaoExpandir img{
-    background-color: #ff0077;
+    background-color: #073FC9;
 }
 header p{
     display: flex;
@@ -72,20 +72,32 @@ header p{
     color: #fff;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.Topo{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
 .Nome1{
-    color: #fff;
+    color: #073FC9;
+    font-size: 46px;
 }
 .Nome2{
-    color: #fff;
+    color: #073FC9;
+    font-size: 62px;
 }
 .Nome3{
-    color: #fff;
+    font-size: 57px;
 }
-.frase{
-    color: #fff;
-}
-.frasesinicio{
+.frasesInicio{
     display: flex;
-    margin-left: 345px;
+    margin-left: 20px;
+    color: #fff;
+    align-items: end;
     flex-direction: column;
+    font-family: Georgia, 'Times New Roman', Times, serif, Geneva, Tahoma, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Tahoma, Geneva, Verdana, sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.FotoDs{
+    width: 550px;
+    height: 550px;
 }
