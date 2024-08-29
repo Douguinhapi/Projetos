@@ -101,3 +101,40 @@ header p{
     width: 550px;
     height: 550px;
 }
+.Imagem{
+    border: 250px;
+    width: 305px;
+    height: 520px;
+}
+.Meio1 {
+    display: flex;
+    align-items: flex-start; /* Alinha verticalmente no topo */
+    margin-left: 205px;
+    margin-right: 105px;
+    gap: 60px; /* Espaço entre a imagem e o texto, ajuste conforme necessário */
+}
+.Imagem {
+    max-width: 250px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 25px;
+}
+.Texto{
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.curriculoLink {
+    display: flex;
+    margin-left: 270px;
+    background-color: #073FC9;
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    padding: 15px 30px; /* Espaçamento interno do botão */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 10px;
+    cursor: pointer; /* Muda o cursor para uma mão ao passar sobre o botão */
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave para a cor e transformação */
+}
+.curriculoLink:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse sobre o botão */
+    transform: scale(1.05); /* Leve aumento do botão ao passar o mouse */
+}

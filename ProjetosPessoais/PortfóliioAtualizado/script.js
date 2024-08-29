@@ -12,3 +12,7 @@ const abrirMenu = () => {
     };
     
 abrirMenu();
+
+const levarPara = () => {
+  window.location.href = "https://docs.google.com/document/d/1AZJAcyNFljH3Fj85q8Wzgnr2Y6HNEpT2gaoWWQ0L7c4/edit?usp=sharing";
+}
