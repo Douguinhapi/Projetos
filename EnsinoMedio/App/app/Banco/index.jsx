@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, Modal } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Link } from 'expo-router';
+
 
 export default function App() {
   const [balance, setBalance] = useState(7320.92);
@@ -60,7 +62,7 @@ export default function App() {
           </View>
         </View>
       </Modal>
-      <TouchableOpacity onPress={() => setModalActive(true)} style={{backgroundColor: 'red', padding: 16, borderRadius: 8}}>
+      <TouchableOpacity onPress={() => setModalActive(true)} style={{backgroundColor: 'red', padding: 16, borderRadius: 8, marginHorizontal: 450}}>
         <Text style={{color: 'white', fontSize: 16}}>Depositar</Text>
       </TouchableOpacity>
       <Modal
@@ -77,9 +79,14 @@ export default function App() {
           </View>
         </View>
       </Modal>
-      <TouchableOpacity onPress={() => setModalActive(true)} style={{backgroundColor: 'red', padding: 16, borderRadius: 8}}>
+      <TouchableOpacity onPress={() => setModalActive(true)} style={{backgroundColor: 'red', padding: 16, borderRadius: 8, marginHorizontal: 450, marginTop: 10}}>
         <Text style={{color: 'white', fontSize: 16}}>Sacar</Text>
       </TouchableOpacity>
+      {/* <View> */}
+        <Link href="./index.jsx">
+          <Text style={{backgroundColor: 'red', padding: 16, borderRadius: 8, marginHorizontal: 620, marginTop: 10, color: 'white'}}> Voltar </Text>
+        </Link>
+      {/* </View> */}
     </View>
   );
 }
@@ -114,6 +121,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    gap: 10,
   },
   outerView: {
     flex: 1,
