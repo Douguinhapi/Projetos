@@ -16,6 +16,7 @@ export default function App() {
           <Button title="SingUp" onPress={() => { }} />
         </Link>
       </View>
+      {/* tete */}
     </View>
   );
 };
