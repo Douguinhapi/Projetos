@@ -45,12 +45,12 @@ export default Seletor = () => {
     }
   }, [tipoSelecionado, pokemonsIniciais]);
 
-  const image = { uri: "https://wallpaper-house.com/data/out/7/wallpaper2you_147633.jpg" };
+  const image = { uri: "https://tm.ibxk.com.br/2019/09/30/30091641838086.jpg?ims=1200x675" };
 
   return (
     <ImageBackground source={image} style={styles.backgroundImage}>
       <View style={styles.container}>
-      <Text style={styles.title}>Selecione um Pokémon</Text>
+      <Text style={styles.title}>Escolha o seu POKEMON (do pierri)</Text>
         <Picker
           selectedValue={tipoSelecionado}
           onValueChange={(itemValue) => setTipoSelecionado(itemValue)}
@@ -93,13 +93,13 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: 26,
+    fontSize: 35,
     fontWeight: '600',
     color: '#ffffff',
-    marginBottom: 10,
+    marginBottom: 25,
   },
   picker: {
-    width: '50%',
+    width: '20%',
     backgroundColor: '#fff',
     borderRadius: 10,
     borderColor: '#ddd',
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   selectedText: {
-    fontSize: 20,
+    fontSize: 35,
     color: '#ffffff',
     marginTop: 20,
     fontWeight: 'bold',

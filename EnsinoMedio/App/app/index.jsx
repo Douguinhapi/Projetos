@@ -15,6 +15,9 @@ export default function App() {
         <Link href="./SingUp">
           <Button title="SingUp" onPress={() => { }} />
         </Link>
+        <Link href="./Pokemon">
+          <Button title="Pokemon" onPress={() => { }} />
+        </Link>
       </View>
     </View>
   );
