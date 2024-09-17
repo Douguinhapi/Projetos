@@ -1,47 +1,70 @@
 import React from 'react';
-import { Button, View, StyleSheet } from 'react-native';
+import { Button, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Link } from 'expo-router';
 import Header from './Header';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Header/>
+      <Header />
       <View style={styles.buttonContainer}>
-        <Link href="./Banco">
-          <Button title="Santander" onPress={() => { }} />
+        <Link href="./Banco" style={styles.link}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Santander</Text>
+          </TouchableOpacity>
         </Link>
-        <Link href="./Calculadora">
-          <Button title="Calculadora" onPress={() => { }} />
+        <Link href="./Calculadora" style={styles.link}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Calculadora</Text>
+          </TouchableOpacity>
         </Link>
-        <Link href="./SingUp">
-          <Button title="SingUp" onPress={() => { }} />
+        <Link href="./SingUp" style={styles.link}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>SingUp</Text>
+          </TouchableOpacity>
         </Link>
-        <Link href="./Pokemon">
-          <Button title="Pokemon" onPress={() => { }} />
+        <Link href="./Pokemon" style={styles.link}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Pokemon</Text>
+          </TouchableOpacity>
         </Link>
-        <Link href="./SobreMim">
-          <Button title="SobreMim" onPress={() => { }} />
+        <Link href="./SobreMim" style={styles.link}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Sobre Mim</Text>
+          </TouchableOpacity>
         </Link>
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start', // Alinha o conteúdo no topo
     alignItems: 'center',
+    backgroundColor: '#e0f7fa', // Cor de fundo clara e suave
   },
   buttonContainer: {
-    flexDirection: 'column', // Coluna para empilhar botões verticalmente
-    justifyContent: 'center',
+    marginTop: 220,
+    width: '50%', // Largura do container dos botões
     alignItems: 'center',
-    gap: 10, // Espaço entre os botões (opcional)
   },
-  header: {
-    flex: 1,
-    justifyContent: 'center',
-  }
+  link: {
+    width: '100%', // Faz com que o Link ocupe toda a largura disponível
+  },
+  button: {
+    backgroundColor: '#00796b', // Cor verde escuro para os botões
+    paddingVertical: 15,
+    paddingHorizontal: 25,
+    borderRadius: 25,
+    marginBottom: 25, // Espaço entre os botões
+    width: '100%', // Largura do botão
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#ffffff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
