@@ -1,23 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Image, } from 'react-native';
 import Header from '../Header';
+import { Link } from 'expo-router';
 
 export default function () {
-  const image = { uri: "https://tm.ibxk.com.br/2019/09/30/30091641838086.jpg?ims=1200x675" };
 
   return (
-    <ImageBackground source={image} style={styles.backgroundImage}>
-    <Header style={styles.header}/>
-      <View style={styles.container}>
-        <Text>Douglas Pierri Beccari</Text>
+    <View>
+      <Header/>
+        <View style={styles.container}>
+        <Text>nome: Douglas Pierri Beccari</Text>
+        <Text>data nascimento: 03/03/2007</Text>
+        <Text>cpf: 🤫</Text>
+        <View>
+          <Image style={styles.minhaFoto} source={require('./minhaImagem.jpeg')} />
+          <View style={styles.botoes}>
+            <Link href='./musicasFav'>
+             <Text>Músicas Favoritas</Text>
+            </Link>
+            <Link href='exerciciosFav'>
+              <Text>Exercícios Favoritos</Text>
+          </Link>
+          </View>
+        </View>
       </View>
-    </ImageBackground>
+    </View>
+
   );
 };
 
 const styles = StyleSheet.create({
-//   backgroundImage: {
-//     flex: 1,
-//     resizeMode: 'cover',
-//   },
+  container: {
+    flex: 1,
+    marginTop: 130,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  minhaFoto: {
+    width: 150,
+    height: 260,
+    borderRadius: 100,
+  },
 });

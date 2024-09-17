@@ -6,7 +6,7 @@ import Header from './Header';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Header style={styles.header}/>
+      <Header/>
       <View style={styles.buttonContainer}>
         <Link href="./Banco">
           <Button title="Santander" onPress={() => { }} />
