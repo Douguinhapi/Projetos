@@ -6,14 +6,22 @@ export default function () {
     <View style={styles.container}>
       <Text style={styles.title}>- Meus Exercícios Favoritos -</Text>
       <View style={styles.gifs}>
-        <Image style={styles.profileImage} source={require('./1.gif')} />
-        <Text>Remada Unilateral</Text>
-        <Image style={styles.profileImage} source={require('./2.webp')} />
-        <Text>Agachamento Livre</Text>
-        <Image style={styles.profileImage} source={require('./3.webp')} />
-        <Text>Rosca Bíceps</Text>
-        <Image style={styles.profileImage} source={require('./4.webp')} />
-        <Text>Supino Inclinado</Text>
+        <View style={styles.gifsFilho}>
+          <Image style={styles.profileImage} source={require('./1.gif')} />
+          <Text style={styles.textosGifs}>Remada Unilateral</Text>
+        </View>
+        <View style={styles.gifsFilho}>
+          <Image style={styles.profileImage} source={require('./2.webp')} />
+          <Text style={styles.textosGifs}>Agachamento Livre</Text>
+        </View>
+        <View style={styles.gifsFilho}>
+          <Image style={styles.profileImage} source={require('./3.webp')} />
+          <Text style={styles.textosGifs}>Rosca Bíceps</Text>
+        </View>
+        <View style={styles.gifsFilho}>
+          <Image style={styles.profileImage} source={require('./4.webp')} />
+          <Text style={styles.textosGifs}>Supino Inclinado</Text>
+        </View>
       </View>
     </View>
   );
@@ -30,8 +38,29 @@ const styles = StyleSheet.create({
     color: 'purple',
     fontWeight: 'bold',
     fontSize: 48,
+    marginTop: 10,
   },
   profileImage: {
-    width: 100,
+    borderColor: 'purple',
+    borderWidth: 5,
+    height: 200,
+    width: 200,
+  },
+  gifs: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  gifsFilho: {
+    flex: 1,
+    flexDirection: 'column',
+    padding: 52,
+  },
+  textosGifs: {
+    color: 'purple',
+    fontWeight: 'bold',
+    fontSize: 22,
+    marginTop: 10,
+    textAlign: 'center',
   }
 });
