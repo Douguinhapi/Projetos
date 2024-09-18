@@ -12,12 +12,12 @@ const App = () => {
         <Text style={styles.infoText}>CPF: 🤫</Text>
 
         <View style={styles.buttonsContainer}>
-          <Link href="/SobreMim/musicasFav.jsx" style={styles.buttonLink}>
+          <Link href="/SobreMim/musicasFav" style={styles.buttonLink}>
             <TouchableOpacity style={styles.button}>
               <Text style={styles.buttonText}>Músicas Favoritas</Text>
             </TouchableOpacity>
           </Link>
-          <Link href="/exerciciosFav.jsx" style={styles.buttonLink}>
+          <Link href="/SobreMim/exerciciosFav" style={styles.buttonLink}>
             <TouchableOpacity style={styles.button}>
               <Text style={styles.buttonText}>Exercícios Favoritos</Text>
             </TouchableOpacity>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   nameText: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#00796b', // Cor verde escuro para o nome
+    color: 'purple', // Cor verde escuro para o nome
     marginBottom: 10,
   },
   infoText: {
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    backgroundColor: '#00796b', // Cor verde escuro para botões
+    backgroundColor: 'purple', // Cor verde escuro para botões
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 30,

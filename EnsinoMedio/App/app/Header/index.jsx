@@ -13,7 +13,7 @@ const Header = () => {
 const styles = StyleSheet.create({
   headerContainer: {
     alignItems: 'center', // Alinha verticalmente ao centro
-    backgroundColor: '#00796b', // Cor de fundo do cabeçalho
+    backgroundColor: 'purple', // Cor de fundo do cabeçalho
     height: 150, // Altura do cabeçalho
     width: '100%', // Largura total da tela
     paddingVertical: 10, // Espaço interno vertical

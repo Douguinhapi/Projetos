@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start', // Alinha o conteúdo no topo
     alignItems: 'center',
-    backgroundColor: '#e0f7fa', // Cor de fundo clara e suave
+    backgroundColor: 'white', // Cor de fundo clara e suave
   },
   buttonContainer: {
     marginTop: 220,
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     width: '100%', // Faz com que o Link ocupe toda a largura disponível
   },
   button: {
-    backgroundColor: '#00796b', // Cor verde escuro para os botões
+    backgroundColor: 'purple', // Cor verde escuro para os botões
     paddingVertical: 15,
     paddingHorizontal: 25,
     borderRadius: 25,
