@@ -33,6 +33,11 @@ export default function App() {
             <Text style={styles.buttonText}>Sobre Mim</Text>
           </TouchableOpacity>
         </Link>
+        <Link href="./Ifome" style={styles.link}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Ifome</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </View>
   );
