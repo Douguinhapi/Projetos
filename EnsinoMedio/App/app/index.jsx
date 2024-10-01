@@ -38,6 +38,11 @@ export default function App() {
             <Text style={styles.buttonText}>Ifome</Text>
           </TouchableOpacity>
         </Link>
+        <Link href="./Galeria" style={styles.link}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Galeria</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </View>
   );
