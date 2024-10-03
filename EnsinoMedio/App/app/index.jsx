@@ -43,6 +43,11 @@ export default function App() {
             <Text style={styles.buttonText}>Galeria</Text>
           </TouchableOpacity>
         </Link>
+        <Link href="./Camera" style={styles.link}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Camera</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </View>
   );
