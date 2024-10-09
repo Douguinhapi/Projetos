@@ -39,11 +39,6 @@ export default function App() {
               <Text style={styles.buttonText}>Ifome</Text>
             </TouchableOpacity>
           </Link>
-          <Link href="./Galeria" style={styles.link}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Galeria</Text>
-            </TouchableOpacity>
-          </Link>
           <Link href="./Camera" style={styles.link}>
             <TouchableOpacity style={styles.button}>
               <Text style={styles.buttonText}>Camera</Text>
@@ -70,6 +65,7 @@ const styles = StyleSheet.create({
     marginTop: 180,
     alignItems: 'center',
     justifyContent: 'center',
+    marginLeft: 360,
   },
   link: {
     width: '50%',
