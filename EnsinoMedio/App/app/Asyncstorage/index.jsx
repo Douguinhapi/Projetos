@@ -4,8 +4,9 @@ import { View, StyleSheet, Text, Image, Button } from 'react-native';
 const storeData = async (value) => {
     try {
         await AsyncStorage.setItem('my-key', value);
-    } catch (e) {
-        // saving error
+    }
+    catch (e) {
+        console.error(e);
     }
 };
 
@@ -15,11 +16,12 @@ const getData = async () => {
         if (value !== null) {
             // value previously stored
         }
-    } catch (e) {
-        // error reading value
+    }
+    catch (e) {
+        console.error(e);
     }
 
-// 
+    // 
 
     return (
         <View style={styles.container}>
