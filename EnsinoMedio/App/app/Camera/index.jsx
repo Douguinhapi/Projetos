@@ -57,11 +57,11 @@ export default function Camera() {
                     <View style={styles.buttonContainer}>
                         <View style={styles.button}>
                             <Image style={styles.icon} source={{ uri: 'https://cdn-icons-png.flaticon.com/512/54/54324.png' }} />
-                            <Button title="Descartar imagem" onPress={() => setFoto(null)} color="#FF9900" />
+                            <Button title="Descartar imagem" onPress={() => setFoto(null)} color="#000000" />
                         </View>
                         <View style={styles.button}>
                             <Image style={styles.icon} source={{ uri: 'https://static.vecteezy.com/ti/vetor-gratis/p1/426000-vector-salvar-icone-gratis-vetor.jpg' }} />
-                            <Button title="Salvar foto" onPress={salvarFoto} color="#FF9900" />
+                            <Button title="Salvar foto" onPress={salvarFoto} color="#000000" />
                         </View>
                     </View>
                 </View>
@@ -77,10 +77,10 @@ export default function Camera() {
                 >
                     <View style={styles.buttonContainer}>
                         <View style={styles.circleButton}>
-                            <Button title="📷" onPress={tirarFoto} color="#FF9900" />
+                            <Button title="📷" onPress={tirarFoto} color="#000000" />
                         </View>
                         <View style={styles.circleButton}>
-                            <Button title="🔄" onPress={inverterLadoCamera} color="#FF9900" />
+                            <Button title="🔄" onPress={inverterLadoCamera} color="#000000" />
                         </View>
                     </View>
                 </CameraView>
