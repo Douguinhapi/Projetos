@@ -44,6 +44,11 @@ export default function App() {
               <Text style={styles.buttonText}>Camera</Text>
             </TouchableOpacity>
           </Link>
+          <Link href="./Asyncstorage" style={styles.link}>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Asyncstorage</Text>
+            </TouchableOpacity>
+          </Link>
         </View>
       </ScrollView>
     </View>
