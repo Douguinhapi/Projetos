@@ -1,102 +1,101 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, Button, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, Button, TextInput, Image, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as ImagePicker from 'expo-image-picker';
+import { Camera } from 'expo-camera';
 
 const App = () => {
-  const [text, setText] = useState('');
-  const [items, setItems] = useState([]);
+  const [memories, setMemories] = useState([]);
+  const [newMemory, setNewMemory] = useState('');
+  const [imageUri, setImageUri] = useState(null);
+  const [cameraPermission, setCameraPermission] = useState(null);
+  const [cameraVisible, setCameraVisible] = useState(false);
+  const [photo, setPhoto] = useState(null);
 
   useEffect(() => {
-    const fetchItems = async () => {
-      try {
-        const storedItems = await AsyncStorage.getItem('items');
-        if (storedItems) {
-          setItems(JSON.parse(storedItems));
-        }
-      } catch (error) {
-        console.error(error);
+    const loadMemories = async () => {
+      const storedMemories = await AsyncStorage.getItem('memories');
+      if (storedMemories) {
+        setMemories(JSON.parse(storedMemories));
       }
     };
 
-    fetchItems();
+    loadMemories();
   }, []);
 
-  const addItem = async () => {
-    if (text) {
-      const newItems = [...items, text];
-      setItems(newItems);
-      setText('');
+  const addMemory = async () => {
+    const memory = { text: newMemory, image: imageUri };
+    const updatedMemories = [...memories, memory];
+    setMemories(updatedMemories);
+    await AsyncStorage.setItem('memories', JSON.stringify(updatedMemories));
+    setNewMemory('');
+    setImageUri(null);
+  };
 
-      try {
-        await AsyncStorage.setItem('items', JSON.stringify(newItems));
-      } catch (error) {
-        console.error(error);
-      }
+  const pickImage = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setImageUri(result.assets[0].uri);
     }
   };
 
-  const removeItem = async (itemToRemove) => {
-    const newItems = items.filter(item => item !== itemToRemove);
-    setItems(newItems);
+  const takePhoto = async () => {
+    const result = await Camera.requestCameraPermissionsAsync();
+    setCameraPermission(result.granted);
+    setCameraVisible(true);
+  };
 
-    try {
-      await AsyncStorage.setItem('items', JSON.stringify(newItems));
-    } catch (error) {
-      console.error(error);
+  const capturePhoto = async () => {
+    if (cameraRef) {
+      const photo = await cameraRef.takePictureAsync();
+      setPhoto(photo.uri);
+      setImageUri(photo.uri);
+      setCameraVisible(false);
     }
   };
 
   return (
-    <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder="Digite um texto"
-        value={text}
-        onChangeText={setText}
-      />
-      <Button title="Adicionar" onPress={addItem} />
+    <View style={{ flex: 1, padding: 20 }}>
+      {/* Listagem de memórias */}
       <FlatList
-        data={items}
+        data={memories}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
-          <View style={styles.itemContainer}>
-            <Text style={styles.item}>{item}</Text>
-            <TouchableOpacity onPress={() => removeItem(item)}>
-              <Text style={styles.removeButton}>Remover</Text>
-            </TouchableOpacity>
+          <View style={{ marginBottom: 20 }}>
+            <Text>{item.text}</Text>
+            {item.image && <Image source={{ uri: item.image }} style={{ width: 100, height: 100 }} />}
           </View>
         )}
       />
+      
+      {/* Tela de adição de memórias */}
+      <TextInput
+        placeholder="Digite sua memória"
+        value={newMemory}
+        onChangeText={setNewMemory}
+        style={{ borderWidth: 1, padding: 10, marginBottom: 10 }}
+      />
+      {imageUri && <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />}
+      <Button title="Escolher da Galeria" onPress={pickImage} />
+      <Button title="Tirar Foto" onPress={takePhoto} />
+      <Button title="Adicionar Memória" onPress={addMemory} />
+      
+      {/* Camera View */}
+      {cameraVisible && cameraPermission && (
+        <Camera style={{ flex: 1 }} type={Camera.Constants.Type.back} ref={(ref) => (cameraRef = ref)}>
+          <View style={{ flex: 1, justifyContent: 'flex-end', marginBottom: 36 }}>
+            <Button title="Capturar" onPress={capturePhoto} />
+          </View>
+        </Camera>
+      )}
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    justifyContent: 'center',
-  },
-  input: {
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginBottom: 10,
-    paddingHorizontal: 10,
-  },
-  itemContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 10,
-  },
-  item: {
-    fontSize: 18,
-  },
-  removeButton: {
-    color: 'red',
-    fontSize: 16,
-  },
-});
 
 export default App;
